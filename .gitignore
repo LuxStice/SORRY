@@ -357,4 +357,4 @@ build/
 # Idea folder
 .idea
 
-external_dlls/
+Assembly-Csharp.dll
