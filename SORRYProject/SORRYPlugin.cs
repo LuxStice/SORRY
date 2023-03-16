@@ -20,6 +20,12 @@ public class SORRYPlugin : BaseSpaceWarpPlugin
     public const string ModVer = MyPluginInfo.PLUGIN_VERSION;
 
     public static SORRYPlugin Instance { get; set; }
+    public static string Path { get; private set; }
+
+    public override void OnPreInitialized()
+    {
+        SORRYPlugin.Path = base.PluginFolderPath;
+    }
 
     /// <summary>
     /// Runs when the mod is first initialized.
