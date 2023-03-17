@@ -28,7 +28,7 @@ namespace SORRY.Modules
         }
         public override void AddDataModules()
         {
-            base.AddDataModules();
+			base.AddDataModules();
             if (this.DataModules.TryGetByType<Data_DeployableControlSurface>(out this.dataDeployableControlSurface))
             {
                 return;
@@ -74,12 +74,11 @@ namespace SORRY.Modules
 		public override void UpdatePAMControlVisibility()
 		{
 			base.UpdatePAMControlVisibility();
-			//this.dataDeployableControlSurface.SetVisible(this.dataDeployableControlSurface.IsDeployed, this.dataCtrlSurface.IsCtrlSurfaceActive);
 			this.dataDeployableControlSurface.SetLabel(dataDeployableControlSurface.IsDeployed, "Debug/IsDeployed");
 		}
 
 		public Animator animator;
 		[SerializeField]
-		protected Data_DeployableControlSurface dataDeployableControlSurface;
+		protected Data_DeployableControlSurface dataDeployableControlSurface = new Data_DeployableControlSurface();
 	}
 }

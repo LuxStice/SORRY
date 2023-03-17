@@ -1,6 +1,8 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using KSP.Modules;
 using KSP.UI.Binding;
+using SORRY.Modules;
 using SpaceWarp;
 using SpaceWarp.API.Assets;
 using SpaceWarp.API.Mods;
@@ -25,6 +27,7 @@ public class SORRYPlugin : BaseSpaceWarpPlugin
     public override void OnPreInitialized()
     {
         SORRYPlugin.Path = base.PluginFolderPath;
+        ModuleDataDefRegistry.Instance.RegisterModule(new Data_DeployableControlSurface());
     }
 
     /// <summary>
