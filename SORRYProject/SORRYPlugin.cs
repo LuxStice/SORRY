@@ -1,14 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using KSP.Modules;
-using KSP.UI.Binding;
-using SORRY.Modules;
 using SpaceWarp;
-using SpaceWarp.API.Assets;
 using SpaceWarp.API.Mods;
-using SpaceWarp.API.UI;
-using SpaceWarp.API.UI.Appbar;
-using UnityEngine;
 
 namespace SORRY;
 
@@ -16,7 +9,6 @@ namespace SORRY;
 [BepInDependency(SpaceWarpPlugin.ModGuid, SpaceWarpPlugin.ModVer)]
 public class SORRYPlugin : BaseSpaceWarpPlugin
 {
-    // These are useful in case some other mod wants to add a dependency to this one
     public const string ModGuid = MyPluginInfo.PLUGIN_GUID;
     public const string ModName = MyPluginInfo.PLUGIN_NAME;
     public const string ModVer = MyPluginInfo.PLUGIN_VERSION;
@@ -27,19 +19,20 @@ public class SORRYPlugin : BaseSpaceWarpPlugin
     public override void OnPreInitialized()
     {
         SORRYPlugin.Path = base.PluginFolderPath;
-        ModuleDataDefRegistry.Instance.RegisterModule(new Data_DeployableControlSurface());
     }
 
-    /// <summary>
-    /// Runs when the mod is first initialized.
-    /// </summary>
     public override void OnInitialized()
     {
         base.OnInitialized();
+        ColorsPatch.DeclareParts(MyPluginInfo.PLUGIN_GUID, new List<string>() { "rcsNosecone", "gridfin" });
 
         Instance = this;
-
-        // Register all Harmony patches in the project
+        
         Harmony.CreateAndPatchAll(typeof(SORRYPlugin).Assembly);
+    }
+
+    public override void OnPostInitialized()
+    {
+        base.OnPostInitialized();
     }
 }
