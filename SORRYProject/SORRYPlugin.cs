@@ -6,7 +6,6 @@ using SpaceWarp.API.Mods;
 namespace SORRY;
 
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
-[BepInDependency(SpaceWarpPlugin.ModGuid, SpaceWarpPlugin.ModVer)]
 public class SORRYPlugin : BaseSpaceWarpPlugin
 {
     public const string ModGuid = MyPluginInfo.PLUGIN_GUID;
