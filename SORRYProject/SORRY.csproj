@@ -22,17 +22,13 @@
             <Publicize>true</Publicize>
             <Private>false</Private>
         </Reference>
-		<Reference Include="SpaceWarp">
-			<HintPath>..\external_dlls\SpaceWarp.dll</HintPath>
-			<Publicize>true</Publicize>
-			<Private>false</Private>
-		</Reference>
-    </ItemGroup>
+	</ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" PrivateAssets="all" />
         <PackageReference Include="BepInEx.Core" Version="5.*" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+		<PackageReference Include="Spacewarp" Version="1.0.1" />
         <PackageReference Include="HarmonyX" Version="2.10.1" />
         <PackageReference Include="UnityEngine.Modules" Version="2020.3.33" IncludeAssets="compile" />
     </ItemGroup>
