@@ -24,7 +24,7 @@ using SpaceWarp.API.Versions;
 /// Patch created by LuxStice.
 /// </summary>
 [HarmonyPatch]
-class ColorsPatch
+public class ColorsPatch
 {
     private static bool LoadOnInit = true; ///TODO: Implement false behaviour
     public static Dictionary<string, string[]> DeclaredParts { get; private set; } = new();
@@ -217,12 +217,9 @@ class ColorsPatch
             if (texture is not null)
                 material.SetTexture(propertyIds[i], texture);
         }
-
-        //material.SetFloat("_GlossMapScale", 0.8593918f);
-        //material.SetTexture("_BumpMap", partHash[trimmedPartName][METTALLIC]);
+        material.SetFloat("_Metallic", 1f);
         //material.SetTexture("_detailMask", partHash[trimmedPartName][METTALLIC]));
     }
-
     private static string TrimPartName(string partName)
     {
         if (partName.Length >= 3)
