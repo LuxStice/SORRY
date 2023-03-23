@@ -8,7 +8,7 @@
         <AssemblyName>SORRY</AssemblyName>
         <Product>Spaceplane and Orbital Recovery and Reusability companY</Product>
         <Description>spent too much time on the name...</Description>
-        <Version>0.2.1</Version>
+        <Version>0.2.2</Version>
         <RestoreAdditionalProjectSources>
             https://api.nuget.org/v3/index.json;
             https://nuget.bepinex.dev/v3/index.json

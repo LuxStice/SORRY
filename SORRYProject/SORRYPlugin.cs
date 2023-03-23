@@ -18,12 +18,14 @@ public class SORRYPlugin : BaseSpaceWarpPlugin
     public override void OnPreInitialized()
     {
         SORRYPlugin.Path = base.PluginFolderPath;
+        ColorsPatch.Init(null);
     }
 
     public override void OnInitialized()
     {
         base.OnInitialized();
-        ColorsPatch.DeclareParts(MyPluginInfo.PLUGIN_GUID, new List<string>() { "rcsNosecone", "gridfin" });
+        List<string> parts = new List<string>() { "rcsNosecone", "gridfin" };
+        ColorsPatch.DeclareParts(MyPluginInfo.PLUGIN_GUID, parts);
 
         Instance = this;
         
