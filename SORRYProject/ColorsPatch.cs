@@ -66,9 +66,9 @@ public class ColorsPatch
         UNITY_STANDARD = "Standard";
 
     [HarmonyPrepare]
-    static bool Init(MethodBase original)
+    public static bool Init(MethodBase original)
     {
-        if (original is null)
+        if (original is not null)
             return true;
         partHash = new Dictionary<string, Texture[]>();
         propertyIds = new int[]
@@ -118,6 +118,8 @@ public class ColorsPatch
         }
         DeclaredParts.Add(modGUID, partNameList.ToArray());
 
+        string partsList = string.Join(", ", partNameList.Select(p => p.ToString()));
+        LogMessage($"{modGUID} declared: {partsList}");
     }
 
     public static void ReloadTextures()
