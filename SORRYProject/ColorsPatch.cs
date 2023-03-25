@@ -216,8 +216,17 @@ public class ColorsPatch
         for (int i = 0; i < propertyIds.Length; i++)
         {
             Texture texture = partHash[trimmedPartName][i];
-            if (texture is not null)
-                material.SetTexture(propertyIds[i], texture);
+            if (texture is null)
+                continue;
+
+            if (i == 2) 
+            {
+                Texture2D normalTexture = new Texture2D(texture.width, texture.height, TextureFormat.RGBA32, false, true);
+                Graphics.CopyTexture(texture, normalTexture);
+                texture = normalTexture;
+            }
+
+            material.SetTexture(propertyIds[i], texture);
         }
         material.SetFloat("_Metallic", 1f);
         //material.SetTexture("_detailMask", partHash[trimmedPartName][METTALLIC]));
