@@ -17,10 +17,9 @@ namespace SORRY.Modules
 			}
 		}
 
-		[LocalizedField("SORRY/DCS/DEBUG/IsDeployed")]
+		[LocalizedField("Deploy Gridfins")]
 		[KSPState(CopyToSymmetrySet = true)]
-		[FormerlySerializedAs("isDeployed")]
 		[Tooltip("Current Control Surface State")]
-		public ModuleProperty<bool> IsDeployed = new ModuleProperty<bool>(false, true);
+		public ModuleProperty<bool> IsDeployed = new ModuleProperty<bool>(false, false);
 	}
 }

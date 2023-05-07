@@ -5,7 +5,9 @@ namespace SORRY.Modules
 {
 	public class PartComponentModule_DeployableControlSurface : PartComponentModule_ControlSurface
 	{
-		public override Type PartBehaviourModuleType
+        private Data_DeployableControlSurface _dataProceduraEngineCover;
+
+        public override Type PartBehaviourModuleType
 		{
 			get
 			{
@@ -14,8 +16,13 @@ namespace SORRY.Modules
 		}
 
 		public override void OnStart(double universalTime)
-		{
-		}
+        {
+            if (!this.DataModules.TryGetByType<Data_DeployableControlSurface>(out this._dataProceduraEngineCover))
+            {
+                SORRYLog.Error("Unable to find a Data_Fairing in the PartComponentModule for " + base.Part.PartName);
+                return;
+            }
+        }
 
 		public override void OnUpdate(double universalTime, double deltaUniversalTime)
 		{

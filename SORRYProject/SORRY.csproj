@@ -8,7 +8,7 @@
         <AssemblyName>sorry</AssemblyName>
         <Product>Spaceplane and Orbital Recovery and Reusability companY</Product>
         <Description>spent too much time on the name...</Description>
-        <Version>0.2.2</Version>
+        <Version>0.2.4</Version>
         <RestoreAdditionalProjectSources>
             https://api.nuget.org/v3/index.json;
             https://nuget.bepinex.dev/v3/index.json
@@ -17,18 +17,27 @@
         <ModId Condition="'$(ModId)'==''">SORRY</ModId>
     </PropertyGroup>
     <ItemGroup>
+      <Compile Remove="ColorsPatch.cs" />
+    </ItemGroup>
+    <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>..\external_dlls\Assembly-CSharp.dll</HintPath>
             <Publicize>true</Publicize>
             <Private>false</Private>
         </Reference>
 	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="SpaceWarp">
+			<HintPath>..\external_dlls\SpaceWarp.dll</HintPath>
+			<Publicize>true</Publicize>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" PrivateAssets="all" />
         <PackageReference Include="BepInEx.Core" Version="5.*" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-		<PackageReference Include="Spacewarp" Version="1.0.1" />
         <PackageReference Include="HarmonyX" Version="2.10.1" />
         <PackageReference Include="UnityEngine.Modules" Version="2020.3.33" IncludeAssets="compile" />
     </ItemGroup>
