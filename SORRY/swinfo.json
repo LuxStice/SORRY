@@ -1,0 +1,29 @@
+{
+    "mod_id": "sorry",
+    "name": "Spaceplane and Orbit Reutilization and Recovery companY",
+    "author": "LuxStice",
+    "description": "SORRY for the explosions...",
+    "source": "https://github.com/LuxStice/SORRY",
+    "version_check": "",
+    "version": "0.4.0",
+    "dependencies": [
+		{
+		"id": "SpaceWarp",
+		"version": {
+			"min": "1.1.0",
+			"max": "*"
+		}
+	},
+		{
+		"id": "LFO",
+		"version": {
+			"min": "0.2.0",
+			"max": "*"
+		}
+	}
+	],
+    "ksp2_version": {
+        "min": "0.1.3.2",
+        "max": "*"
+    }
+}
