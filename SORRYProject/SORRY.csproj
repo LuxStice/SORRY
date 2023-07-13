@@ -8,38 +8,51 @@
         <AssemblyName>sorry</AssemblyName>
         <Product>Spaceplane and Orbital Recovery and Reusability companY</Product>
         <Description>spent too much time on the name...</Description>
-        <Version>0.2.4</Version>
-        <RestoreAdditionalProjectSources>
-            https://api.nuget.org/v3/index.json;
-            https://nuget.bepinex.dev/v3/index.json
-        </RestoreAdditionalProjectSources>
+        <Version>0.4.0</Version>
+		<RestoreAdditionalProjectSources>
+			https://nuget.spacewarp.org/v3/index.json
+		</RestoreAdditionalProjectSources>
         <RootNamespace>SORRY</RootNamespace>
         <ModId Condition="'$(ModId)'==''">SORRY</ModId>
     </PropertyGroup>
-    <ItemGroup>
-      <Compile Remove="ColorsPatch.cs" />
-    </ItemGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>..\external_dlls\Assembly-CSharp.dll</HintPath>
             <Publicize>true</Publicize>
             <Private>false</Private>
         </Reference>
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="SpaceWarp">
-			<HintPath>..\external_dlls\SpaceWarp.dll</HintPath>
+		<Reference Include="Ak.Wwise.Api.WAAPI">
+			<HintPath>..\external_dlls\Ak.Wwise.Api.WAAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.API">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.API.dll</HintPath>
 			<Publicize>true</Publicize>
 			<Private>false</Private>
 		</Reference>
-	</ItemGroup>
+		<Reference Include="AK.Wwise.Unity.API.WwiseTypes">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.API.WwiseTypes.dll</HintPath>
+			<Publicize>true</Publicize>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.MonoBehaviour">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.MonoBehaviour.dll</HintPath>
+			<Publicize>true</Publicize>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.Timeline">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.Timeline.dll</HintPath>
+			<Publicize>true</Publicize>
+			<Private>false</Private>
+		</Reference>
+    </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" PrivateAssets="all" />
-        <PackageReference Include="BepInEx.Core" Version="5.*" />
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-        <PackageReference Include="HarmonyX" Version="2.10.1" />
-        <PackageReference Include="UnityEngine.Modules" Version="2020.3.33" IncludeAssets="compile" />
+		<PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" PrivateAssets="all" />
+		<PackageReference Include="BepInEx.Core" Version="5.*" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+		<PackageReference Include="HarmonyX" Version="2.10.1" />
+		<PackageReference Include="SpaceWarp" Version="1.3.0" />
+		<PackageReference Include="UnityEngine.Modules" Version="2020.3.33.1" IncludeAssets="compile" />
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="echo d | xcopy /y /s &quot;$(ProjectDir)..\$(ModId)\&quot; &quot;$(ProjectDir)..\$(ConfigurationName)\BepInEx\plugins\$(ModId)\&quot;&#xA;echo f | xcopy /y &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\$(ConfigurationName)\BepInEx\plugins\$(ModId)\$(ModId).dll&quot;&#xA;if $(ConfigurationName) == Debug echo f | xcopy /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(ProjectDir)..\$(ConfigurationName)\BepInEx\plugins\$(ModId)\$(ModId).pdb&quot;&#xA;xcopy /y &quot;$(ProjectDir)..\LICENSE&quot; &quot;$(ProjectDir)..\$(ConfigurationName)\BepInEx\plugins\$(ModId)\&quot;&#xA;echo f | xcopy /y &quot;$(ProjectDir)..\README.md&quot; &quot;$(ProjectDir)..\$(ConfigurationName)\BepInEx\plugins\$(ModId)\README.txt&quot;" />

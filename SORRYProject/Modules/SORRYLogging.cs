@@ -4,6 +4,10 @@ using System.Text;
 
 namespace SORRY
 {
+    internal static class SDebug
+    {
+        public static bool ShowDebug = false;
+    }
     internal static class SORRYLog
     {
         internal static void Info(string message) => SORRYPlugin.Instance.ModLogger.LogInfo(message);
