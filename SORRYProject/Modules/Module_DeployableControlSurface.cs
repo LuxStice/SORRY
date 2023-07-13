@@ -4,12 +4,14 @@ using KSP.IO;
 using KSP.Modules;
 using KSP.Sim.Definitions;
 using UnityEngine;
+using static SORRY.SORRYLog;
 
 namespace SORRY.Modules
 {
 	[DisallowMultipleComponent]
     public class Module_DeployableControlSurface : Module_ControlSurface
 	{
+		private Module_Deployable deployable;
 		public override Type PartComponentModuleType
 		{
 			get
@@ -23,17 +25,21 @@ namespace SORRY.Modules
 		{
 			base.OnInitialize();
             animator = GetComponentInChildren<Animator>(true);
-            base.AddActionGroupAction(new Action<bool>(this.SetControlSurfaceActiveState), KSP.Sim.KSPActionGroup.Brakes, "Toggle Gridfin", this._dataDeployableControlSurface.IsDeployed);
-			base.AddActionGroupAction(new Action(this.SetControlSurfaceActiveStateOn), KSP.Sim.KSPActionGroup.None, "Deploy Gridfin");
-			base.AddActionGroupAction(new Action(this.SetControlSurfaceActiveStateOff), KSP.Sim.KSPActionGroup.None, "Retract Gridfin");
-			_dataDeployableControlSurface.IsDeployed.OnChanged += OnDeployedStateChanged;
 
-            this.UpdatePAMControlVisibility();
-			SetControlSurfaceActiveState(_dataDeployableControlSurface.IsDeployed.GetValue());
+            UpdatePAMControlVisibility();
+
+            AddActionGroupAction(SetControlSurfaceActiveState, KSP.Sim.KSPActionGroup.Brakes, "Toggle Gridfin", _dataDeployableControlSurface.IsDeployed);
+            AddActionGroupAction(SetControlSurfaceActiveStateOn, KSP.Sim.KSPActionGroup.None, "Deploy Gridfin");
+            AddActionGroupAction(SetControlSurfaceActiveStateOff, KSP.Sim.KSPActionGroup.None, "Retract Gridfin");
+			SetControlSurfaceInvertControlState(true);
+
+            _dataDeployableControlSurface.IsDeployed.OnChangedValue += OnDeployedStateChanged;
+            SetControlSurfaceActiveState(_dataDeployableControlSurface.IsDeployed.GetValue());
         }
+
         public override void AddDataModules()
         {
-			base.AddDataModules(); 
+			base.AddDataModules();
 			this._dataDeployableControlSurface ??= new Data_DeployableControlSurface();
             this.DataModules.TryAddUnique<Data_DeployableControlSurface>(this._dataDeployableControlSurface, out this._dataDeployableControlSurface);
         }
@@ -44,16 +50,13 @@ namespace SORRY.Modules
             {
                 this.animator.SetBool("Deployed", _dataDeployableControlSurface.IsDeployed.storedValue);
             }
-			if (this._dataDeployableControlSurface.IsDeployed.GetValue())
-			{
-				base.CtrlSurfaceUpdate(vel, deltaTime);
-			}
+			base.CtrlSurfaceUpdate(vel, deltaTime);
 		}
 
 		private void SetDragCubes(bool deployed)
 		{
 			this._dataDrag.SetCubeWeight("Deployed", deployed ? 1f : 0f);
-			//this._dataDrag.SetCubeWeight("Retracted", 0f);
+			this._dataDrag.SetCubeWeight("Retracted", !deployed ? 1f : 0f);
 		}
 
 		public override string GetModuleDisplayName()
@@ -61,45 +64,87 @@ namespace SORRY.Modules
 			return LocalizationManager.GetTranslation("PartModules/ControlSurface/Name", true, 0, true, false, null, null, true);
 		}
 
-		private void OnDeployedStateChanged()
+		private void OnDeployedStateChanged(bool deployed)
         {
-			bool newState = _dataDeployableControlSurface.IsDeployed.GetValue();
-            this.SetDragCubes(newState);
-			if (!newState)
-                _ctrlSurface.localRotation = _neutral * Quaternion.AngleAxis(0, _rotationVector);
-            //this.animator.SetBool("Deployed", newState);
+			isDirty = true;
         }
-
-		private void SetControlSurfaceActiveState(bool newState)
+		private bool isDirty;
+		void Update()
 		{
-			_dataDeployableControlSurface.IsDeployed.SetValue(newState);
+			if (isDirty)
+            {
+                this.SetDragCubes(IsDeployed);
+                if (!IsDeployed)
+                {
+                    _ctrlSurface.localRotation = _neutral * Quaternion.AngleAxis(0, _rotationVector);
+                }
+                if (this.animator is not null)
+                    this.animator.SetBool("Deployed", IsDeployed);
+
+                if (SDebug.ShowDebug)
+                {
+                    if (_dataDeployableControlSurface.TryGetProperty<string>(DEBUG_CONTEXT_KEY, out var moduleProperty))
+                    {
+                        moduleProperty.SetValue(IsDeployed ? "Deployed" : "Retracted");
+                    }
+                }
+				isDirty = false;
+            }
+		}
+
+		public bool IsDeployed
+		{
+			get => _dataDeployableControlSurface.IsDeployed.GetValue();
+			set
+			{
+				if(value != IsDeployed)
+				{
+					_dataDeployableControlSurface.IsDeployed.SetValue(value);
+				}
+			}
+		}
+		private void SetControlSurfaceActiveState(bool newState)
+        {
+            IsDeployed = newState;
+			dataCtrlSurface.AllowControl = newState;
+			UpdatePAMControlVisibility();
+		}
+		private void ToggleDeployedState()
+		{
+			SetControlSurfaceActiveState(!IsDeployed);
 		}
 		private void SetControlSurfaceActiveStateOn()
-		{
-			this.SetControlSurfaceActiveState(true);
+        {
+            this.SetControlSurfaceActiveState(true);
 		}
 		private void SetControlSurfaceActiveStateOff()
-		{
-			this.SetControlSurfaceActiveState(false);
+        {
+            this.SetControlSurfaceActiveState(false);
 		}
 
-		public override void UpdatePAMControlVisibility()
-		{
-            bool isAdvancedShown = dataCtrlSurface.IsAdvancedSettingsShown.GetValue();
-			bool deployed = _dataDeployableControlSurface.IsDeployed.GetValue();
+		private const string DEBUG_CONTEXT_KEY = "debug-DCSState";
 
+
+        public override void UpdatePAMControlVisibility()
+        {
             _dataDeployableControlSurface.SetVisible(_dataDeployableControlSurface.IsDeployed, dataCtrlSurface.IsCtrlSurfaceActive);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.InvertControl, dataCtrlSurface.IsCtrlSurfaceActive);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.IsAdvancedSettingsShown, dataCtrlSurface.IsCtrlSurfaceActive);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.EnablePitch, dataCtrlSurface.IsCtrlSurfaceActive && isAdvancedShown);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.EnableYaw, dataCtrlSurface.IsCtrlSurfaceActive && isAdvancedShown);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.EnableRoll, dataCtrlSurface.IsCtrlSurfaceActive && isAdvancedShown);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.AuthorityLimiter, dataCtrlSurface.IsCtrlSurfaceActive && isAdvancedShown);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.LiftDragRatioParent, PartBackingMode == PartBehaviourModule.PartBackingModes.Flight);
-            dataCtrlSurface.SetVisible(dataCtrlSurface.AoA, true);
+            if (SDebug.ShowDebug)
+            {
+                var moduleProperty = new ModuleProperty<string>("unitialized", false);
+                moduleProperty.ContextKey = DEBUG_CONTEXT_KEY;
+                moduleProperty.SetValue(_dataDeployableControlSurface.IsDeployed.GetValue() ? "Deployed" : "Retracted");
+                _dataDeployableControlSurface.AddProperty("Current deploy state", moduleProperty);
+                _dataDeployableControlSurface.SetToStringDelegate(moduleProperty, ToStringDelegate);
+                _dataDeployableControlSurface.SetVisible(moduleProperty, SDebug.ShowDebug);
+            }
+            base.UpdatePAMControlVisibility();
 
-			dataCtrlSurface.SetVisible(dataCtrlSurface.Deploy, false);
-			dataCtrlSurface.SetVisible(dataCtrlSurface.DeployAngle, false);
+
+        }
+
+		string ToStringDelegate(object obj)
+		{
+			return IsDeployed ? "Deployed" : "Retracted";
         }
 
 		public Animator animator;
