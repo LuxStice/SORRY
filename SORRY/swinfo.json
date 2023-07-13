@@ -4,7 +4,7 @@
     "author": "LuxStice",
     "description": "SORRY for the explosions...",
     "source": "https://github.com/LuxStice/SORRY",
-    "version_check": "",
+    "version_check": "https://raw.githubusercontent.com/LuxStice/SORRY/main/SORRY/swinfo.json",
     "version": "0.4.0",
     "dependencies": [
 		{
