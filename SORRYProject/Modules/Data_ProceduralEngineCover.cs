@@ -82,7 +82,7 @@ namespace SORRY.Modules
                     pos = RotatePointAroundPivot(pos, Vector3.zero, Vector3.up * rotateBy);
 
                     string nodeID = $"Cluster#{i}_Engine#{e}";
-                    string NodeSymmetryGroupID = null;
+                    string NodeSymmetryGroupID = string.Empty;
                     if (currentRing.EngineCount > 1)
                         NodeSymmetryGroupID = $"Cluster#{i}";
 

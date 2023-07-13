@@ -38,7 +38,7 @@ namespace SORRY.Modules
         {
             base.OnInitialize();
             SORRYPlugin.Register(this);
-            if (OABPart is not null)
+            if (PartBackingMode == PartBackingModes.OAB)
             {
                 var bottomNode = OABPart.GetNode("bottom");
                 _dataProceduralEngineCover.originalBottomNodePos = bottomNode.PartRelativePosition;
