@@ -18,31 +18,23 @@
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>..\external_dlls\Assembly-CSharp.dll</HintPath>
-            <Publicize>true</Publicize>
-            <Private>false</Private>
+			<Publicize>true</Publicize>
+			<Private>false</Private>
         </Reference>
 		<Reference Include="Ak.Wwise.Api.WAAPI">
 			<HintPath>..\external_dlls\Ak.Wwise.Api.WAAPI.dll</HintPath>
 		</Reference>
 		<Reference Include="AK.Wwise.Unity.API">
 			<HintPath>..\external_dlls\AK.Wwise.Unity.API.dll</HintPath>
-			<Publicize>true</Publicize>
-			<Private>false</Private>
 		</Reference>
 		<Reference Include="AK.Wwise.Unity.API.WwiseTypes">
 			<HintPath>..\external_dlls\AK.Wwise.Unity.API.WwiseTypes.dll</HintPath>
-			<Publicize>true</Publicize>
-			<Private>false</Private>
 		</Reference>
 		<Reference Include="AK.Wwise.Unity.MonoBehaviour">
 			<HintPath>..\external_dlls\AK.Wwise.Unity.MonoBehaviour.dll</HintPath>
-			<Publicize>true</Publicize>
-			<Private>false</Private>
 		</Reference>
 		<Reference Include="AK.Wwise.Unity.Timeline">
 			<HintPath>..\external_dlls\AK.Wwise.Unity.Timeline.dll</HintPath>
-			<Publicize>true</Publicize>
-			<Private>false</Private>
 		</Reference>
     </ItemGroup>
     <ItemGroup>
