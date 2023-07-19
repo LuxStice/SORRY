@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <!-- Project references -->
+    <ItemGroup Label="DLL file references">
+        <!-- Add references to any DLL files you want to use in your mod here -->
+		<Reference Include="Ak.Wwise.Api.WAAPI">
+			<HintPath>..\external_dlls\Ak.Wwise.Api.WAAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.API">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.API.dll</HintPath>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.API.WwiseTypes">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.API.WwiseTypes.dll</HintPath>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.MonoBehaviour">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.MonoBehaviour.dll</HintPath>
+		</Reference>
+		<Reference Include="AK.Wwise.Unity.Timeline">
+			<HintPath>..\external_dlls\AK.Wwise.Unity.Timeline.dll</HintPath>
+		</Reference>
+    </ItemGroup>
+    <ItemGroup Label="NuGet package references">
+        <!-- Add references to any NuGet packages you want to use in your mod here -->
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.*"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
+        <PackageReference Include="HarmonyX" Version="2.10.1"/>
+        <PackageReference Include="KerbalSpaceProgram2.GameLibs" Version="0.1.3" PrivateAssets="all"/>
+        <PackageReference Include="SpaceWarp" Version="1.3.0"/>
+        <PackageReference Include="UnityEngine.Modules" Version="2020.3.33.1"/>
+    </ItemGroup>
+</Project>

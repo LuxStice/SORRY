@@ -1,16 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F71913E5-5660-40D6-A571-A720B7AD53D5}") = "SORRY", "SORRYProject\SORRY.csproj", "{7BB0B38F-8581-49E3-80BB-BA80005084D4}"
+Project("{5FFC2E7F-66BA-47A9-8C0C-0CDCBDD02AA6}") = "SORRY", "src/SORRY/SORRY.csproj", "{2004A644-1144-4153-AF2D-189438238852}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		DeployAndRun|Any CPU = DeployAndRun|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7BB0B38F-8581-49E3-80BB-BA80005084D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BB0B38F-8581-49E3-80BB-BA80005084D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BB0B38F-8581-49E3-80BB-BA80005084D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BB0B38F-8581-49E3-80BB-BA80005084D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.DeployAndRun|Any CPU.ActiveCfg = DeployAndRun|Any CPU
+		{2004A644-1144-4153-AF2D-189438238852}.DeployAndRun|Any CPU.Build.0 = DeployAndRun|Any CPU
 	EndGlobalSection
 EndGlobal

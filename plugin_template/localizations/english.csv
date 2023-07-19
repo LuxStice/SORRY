@@ -1,0 +1,138 @@
+Key,Type,Desc,English
+
+Parts/Title/rcsNoseconeXS,Text,,MIL-7
+Parts/Subtitle/rcsNoseconeXS,Text,,osecone equipped with RCS thrusters
+Parts/Manufacturer/rcsNoseconeXS,Text,,MILion Industries
+Parts/Description/rcsNoseconeXS,Text,,"The MIL-7 was invented by Milfree Kerman, when his boss wanted something smaller than the MIL-14. The original design he proposed featured plastic components from a water gun, and worked surprisingly well. Those pieces are probably still there..."
+
+Parts/Title/rcsNoseconeS,Text,,MIL-14
+Parts/Subtitle/rcsNoseconeS,Text,,Nosecone equipped with RCS thrusters
+Parts/Manufacturer/rcsNoseconeS,Text,,MILion Industries
+Parts/Description/rcsNoseconeS,Text,,"The MIL-14 was invented by Milfree Kerman, inspired by an ad for exercise drinking cups. Milfree accidentally left some very small holes which caused it to spray pressurized monopropellant. He told his boss it was a feature, and thus wasn't fired."
+
+Parts/Title/rcsNoseconeM,Text,,MIL-28
+Parts/Subtitle/rcsNoseconeM,Text,,osecone equipped with RCS thrusters
+Parts/Manufacturer/rcsNoseconeM,Text,,MILion Industries
+Parts/Description/rcsNoseconeM,Text,,"The MIL-28 was created by Milfree Kerman after the MIL-14 and the MIL-7. Milfree at this point was a master of his craft, and he made a prototype in less than 4 hours. Coincidentally, all the planes in the VAB were missing their nosecone... odd."
+
+Parts/Title/rcsNoseconeL,Text,,MIL-42
+Parts/Subtitle/rcsNoseconeL,Text,,osecone equipped with RCS thrusters
+Parts/Manufacturer/rcsNoseconeL,Text,,MILion Industries
+Parts/Description/rcsNoseconeL,Text,,"The MIL-42 was created by legendary Milfree Kerman after the success of the other variants. He repurposed the leaking tank of a huge truck, and during the presentation he slapped it hard and said "You can fit so much monoprop in it!". It exploded."
+
+Parts/Title/rcsNoseconeXL,Text,,MIL-56
+Parts/Subtitle/rcsNoseconeXL,Text,,osecone equipped with RCS thrusters
+Parts/Manufacturer/rcsNoseconeXL,Text,,MILion Industries
+Parts/Description/rcsNoseconeXL,Text,,"The MIL-56 was made by Milfree Kerman after the disaster of the MIL-42, despite everyone begging him not to cause any further damage, but he just didn't care. He somehow obtained a submarine, and spent a week cutting it, creating this marvel. "
+
+
+
+Parts/Title/gridfinS,Text,,WAF-001
+Parts/Subtitle/gridfinS,Text,,Hypersonic gridfin
+Parts/Manufacturer/gridfinS,Text,,MILion Industries
+Parts/Description/gridfinS,Text,,"The WAF-001, designed to control your small-sized first stages during reentry, was created when two kerbals “accidentally” poured liquid metal in the KSC's waffle maker. The object was then used to heat up a waffle during reentry, which burnt it, but kept the craft steady."
+
+Parts/Title/gridfinM,Text,,WAF-010
+Parts/Subtitle/gridfinM,Text,,Hypersonic gridfin
+Parts/Manufacturer/gridfinM,Text,,MILion Industries
+Parts/Description/gridfinM,Text,,"The WAF-010, designed to control your medium-sized first stages during reentry, was invented after the success of the WAF-001. Its first test sadly resulted in a failure since it was used to toast a huge waffle using a rocket engine underneath, and wasn't cleaned afterwards."
+
+Parts/Title/gridfinL,Text,,WAF-100
+Parts/Subtitle/gridfinL,Text,,Hypersonic gridfin
+Parts/Manufacturer/gridfinL,Text,,MILion Industries
+Parts/Description/gridfinL,Text,,"The WAF-100, designed to control your large-sized first stages during reentry, was first made by KSC scientists to cook enormous rations of waffles for interplanetary trips, but it was then repurposed by the engineers for landing stages. Sometimes, progress requires sacrifices."
+
+
+
+Parts/Title/Milrin-07,Text,,Kheap-0
+Parts/Subtitle/Milrin-07,Text,,High Thrust, Low ISP Engine
+Parts/Manufacturer/Milrin-07,Text,,MILion Industries
+Parts/Description/Milrin-07,Text,,"One boring day at the office milfree was tasked with developing a new engine, his boss told him “make it small with a big punch so we don’t have to use that big vector anymore” milfree which was quite confused why he was tasked with this stumbled to the vab where he started to indulge in the premium break food the vab workers had, before he knew it he had gained 4 pounds, wasted 5 hours, gotten sick twice, and had no engine, so milfree quickly grabbed a nerva nozzle, a vector injector plate and turbo machinery, and a few nuts and bolts from a mammoth to create what he called “100% going to work 1000” which promptly exploded in his boss’s face. Milfree quickly explained that the failed test demonstrate that “funny engine go brr” and “the design only needs very small tweaks” after his many heart attacks milfree went to the local arts and crafts store for some kerb-tape and kerb-taped so much of the engine together that you can’t even tell he found the vector turbo-machinery while fishing near ksc"
+
+
+
+Parts/Title/Reiptor-12,Text,,Reiptor-12
+Parts/Subtitle/Reiptor-12,Text,,High Thrust, Low ISP Engine
+Parts/Manufacturer/Reiptor-12,Text,,MILion Industries
+Parts/Description/Reiptor-12,Text,,"Milfree always hated how yellow his engine's plumes where, and he was determined to change that, “I WANT GREEN FLAMES!” - he shouted after hours of unfruitfull research. So he had the idea of burning Kethane instead of regular LOX. As soon as he started the engine he was disapointed... The plume was pink. Defeated Milfree went to sleep, leaving the engine on. Little did he know that he created the most powerful engine to date. Months later he gave the pink torch to Kerbalina, his soon to be wife."
+
+
+
+Parts/Title/cover_5m_0-5-10,Text,,CVR-0510 (Do not use!)
+Parts/Subtitle/cover_5m_0-5-10,Text,,Engine cover
+Parts/Manufacturer/cover_5m_0-5-10,Text,,MILion Industries
+Parts/Description/cover_5m_0-5-10,Text,,This part is kept here so that vessels that still have it don't break! DO NOT USE THIS PART!
+
+
+
+Parts/Title/ProceduralEngineCoverM,Text,,BLNKT-120
+Parts/Subtitle/ProceduralEngineCoverM,Text,,Engine cover
+Parts/Manufacturer/ProceduralEngineCoverM,Text,,MILion Industries
+Parts/Description/ProceduralEngineCoverM,Text,,"Milfree always thought that the engines were like his children. During the night he sneaked into the yard just to cover them with some blankets since they were always so cold... Till one day he had the brilliant idea to give them a cover!"
+
+Parts/Title/ProceduralEngineCoverL,Text,,BLNKT-151
+Parts/Subtitle/ProceduralEngineCoverL,Text,,Engine cover
+Parts/Manufacturer/ProceduralEngineCoverL,Text,,MILion Industries
+Parts/Description/ProceduralEngineCoverL,Text,,"Milfree's kids, I mean, engines were getting bigger with time, so he had to give them a bigger blanket. Lets hope this doesn't become a trend."
+
+Parts/Title/ProceduralEngineCoverXL,Text,,BLNKT-182
+Parts/Subtitle/ProceduralEngineCoverXL,Text,,Engine cover
+Parts/Manufacturer/ProceduralEngineCoverXL,Text,,MILion Industries
+Parts/Description/ProceduralEngineCoverXL,Text,,"And he's giving their “kids” another blanket... They grow so fast. Also, they listen to metal now? lets hope its just a phase."
+
+
+
+Parts/Title/BE-4,Text,,BUH-4
+Parts/Subtitle/BE-4,Text,,High Thrust 1.875m engine
+Parts/Manufacturer/BE-4,Text,,MILion Industries
+Parts/Description/BE-4,Text,,"Milfree, after his success with kheap decided to go big, his boss didn't like his design very much tho, so he went home. But he had too many "inventions" laying arround so he decided to start his own yard of scrap! I mean, rocket parts!"
+
+
+
+Parts/Title/Reiptor-12Vac,Text,,Reiptor-12 (Vac)
+Parts/Subtitle/Reiptor-12Vac,Text,,High ISP Vacuum engine
+Parts/Manufacturer/Reiptor-12Vac,Text,,MILion Industries
+Parts/Description/Reiptor-12Vac,Text,,"Milfree's engines always seemed to underperform when on the cold space (even after he gave them his BLNKT-182), he was unsatisfied with his inventions so he did what he know best and he took an productive nap. He dreamt about a nozzle the size of a big ball, very big! So he made a BIG nozzle and attached it to Reiptor-12"
+
+
+Parts/Title/Mirlin-07Vac,Text,,Kheap-0 (Vac)
+Parts/Subtitle/Mirlin-07Vac,Text,,High ISP Vacuum engine
+Parts/Manufacturer/Mirlin-07Vac,Text,,MILion Industries
+Parts/Description/Mirlin-07Vac,Text,,"Milfree's solution for space propulsion! Genius idea, lets just make the nozzle bigger he said, when he went to test the engine it just exploded... So he thought, this is just a diffrent form of deltaV! so he strapped it into the upper stage of a rocket and somehow the engine didnt explode..."
+
+
+Parts/Title/GridfinHexS,Text,,HexaFly - 2B
+Parts/Subtitle/GridfinHexS,Text,,Hexagonal gridfin
+Parts/Manufacturer/GridfinHexS,Text,,MILion Industries
+Parts/Description/GridfinHexS,Text,,"Milfree always liked bees, maybe a bit too much, so much that he wanted them to go to space and see how pretty it is up there, so he strapped his hivebox onto a rocket and send them to space! - “Bee free” - he said, seconds later the hivebox began to RUD, leaving only a couple of slots on the side of the rocket, the rocket was able to do a backflip and land back on Milfree's Yard! After the success, Milfree made a few tweaks to “his” design"
+
+Parts/Title/InlineGridfinBase,Text,,HexaFly - TankU
+Parts/Subtitle/InlineGridfinBase,Text,,Hexagonal grifin aerodynamic base
+Parts/Manufacturer/InlineGridfinBase,Text,,MILion Industries
+Parts/Description/InlineGridfinBase,Text,,"Small tank to house all of those bees, or HexaFlies 2Bs up to you!"
+
+
+Parts/Title/GridfinHexM,Text,,HexaBIGFly - !2B
+Parts/Subtitle/GridfinHexM,Text,,Hexagonal gridfin
+Parts/Manufacturer/GridfinHexM,Text,,MILion Industries
+Parts/Description/GridfinHexM,Text,,"After a couple months, Milfree was filled with guilt after stealing the bees' idea. He tried to give back to his bees by throwing a pool party in their homage. It didnt go very well, so Milfree decided to make a bigger home for them"
+
+Parts/Title/InlineGridfinBase_2.5m,Text,,HexaBIGFly - TankUVeryMuch
+Parts/Subtitle/InlineGridfinBase_2.5m,Text,,Hexagonal grifin aerodynamic base
+Parts/Manufacturer/InlineGridfinBase_2.5m,Text,,MILion Industries
+Parts/Description/InlineGridfinBase_2.5m,Text,,"Medium tank to house all of those bees, or HexaFlies !2Bs (not 2Bs) up to you!"
+
+Parts/Title/sorry_HeavyRCSBlock,Text,,RC-5
+Parts/Subtitle/sorry_HeavyRCSBlock,Text,,RCS Thruster Block
+Parts/Manufacturer/sorry_HeavyRCSBlock,Text,,MILion Industries
+Parts/Description/sorry_HeavyRCSBlock,Text,,"Milfree had this strange looking pressurized tank and had the brilliant idea to poke some holes on it. He was amazed to see that the tank flew a couple meters away. Creating RC-5."
+
+Parts/Title/sorry_m2_VtolBi,Text,,M-34 “Pursina”
+Parts/Subtitle/sorry_m2_VtolBi,Text,,VTOL Methalox Engine
+Parts/Manufacturer/sorry_m2_VtolBi,Text,,MILion Industries
+Parts/Description/sorry_m2_VtolBi,Text,,"Vertical Takeoff and Landing engine on the form factor Mk2."
+
+Parts/Title/sorry_m2_RCSBlock,Text,,M-Puss “RcSass”
+Parts/Subtitle/sorry_m2_RCSBlock,Text,,Mk2 RCS Block
+Parts/Manufacturer/sorry_m2_RCSBlock,Text,,MILion Industries
+Parts/Description/sorry_m2_RCSBlock,Text,,"A powerful RCS block that points in 12 directions!"
